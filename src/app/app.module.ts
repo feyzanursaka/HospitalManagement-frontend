@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms"
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+import {FormsModule, ReactiveFormsModule} from "@angular/forms"
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,10 +13,11 @@ import { TodoComponent } from './components/todo/todo.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 
-import { ToastrModule } from 'ngx-toastr';
+import {ToastrModule} from "ngx-toastr";
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
-import { ProductAddComponent } from './product-add/product-add.component';
-
+import { ProductAddComponent } from './components/product-add/product-add.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProductAddComponent } from './product-add/product-add.component';
     VatAddedPipe,
     FilterPipe,
     CartSummaryComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,9 @@ import { ProductAddComponent } from './product-add/product-add.component';
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
