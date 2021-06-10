@@ -3,7 +3,7 @@
 <h5>Hastane Randevu Sistemini Yönetir
     Doktor, Hasta ve Randevunun CRUD işlemlerini gerçekleştirir. Hasta için istenilen doktoru ve günü seçerek randevu oluşturulabilir</h5>
 
-# Recap Images
+# Hospital Management System Images
 
 <img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/1.PNG">
 <img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/2.PNG">
@@ -18,6 +18,11 @@
 <img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/11.PNG">
 <img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/12.PNG">
 <img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/13.PNG">
+
+# Eksikler
+
+Doctor silme işlemi patiente bağlı olduğu için gerçekleştirilmemiştir.
+Appointment sayfasında date type güvenli olmadığı database işlemi gerçekleşmemiştir.
 
 # Northwind
 
