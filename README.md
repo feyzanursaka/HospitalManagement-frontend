@@ -16,6 +16,9 @@
 <img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/8.PNG">
 <img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/9.PNG">
 <img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/10.PNG">
+
+# DataBase Images
+
 <img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/11.PNG">
 <img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/12.PNG">
 <img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/13.PNG">
