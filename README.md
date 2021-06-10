@@ -1,3 +1,24 @@
+# Projenin Konusu 
+
+<h5>Hastane Randevu Sistemini Yönetir
+    Doktor, Hasta ve Randevunun CRUD işlemlerini gerçekleştirir. Hasta için istenilen doktoru ve günü seçerek randevu oluşturulabilir</h5>
+
+# Recap Images
+
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/1.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/2.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/3.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/4.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/5.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/6.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/7.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/8.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/9.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/10.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/11.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/12.PNG">
+<img src="https://github.com/feyzanursaka/HospitalManagement-frontend/blob/master/ss/13.PNG">
+
 # Northwind
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
