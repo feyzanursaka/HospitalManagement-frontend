@@ -1,7 +1,8 @@
 # Projenin Konusu 
 
-<h5>Hastane Randevu Sistemini Yönetir
-    Doktor, Hasta ve Randevunun CRUD işlemlerini gerçekleştirir. Hasta için istenilen doktoru ve günü seçerek randevu oluşturulabilir</h5>
+<h5>Hastane Randevu Sistemini Yönetir.</h5>
+<h5>Doktor, Hasta ve Randevunun CRUD işlemlerini gerçekleştirir.</h5> 
+<h5>Hasta için istenilen doktoru ve günü seçerek randevu oluşturulabilir</h5>
 
 # Hospital Management System Images
 
