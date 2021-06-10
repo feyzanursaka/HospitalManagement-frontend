@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CategoryComponent } from './components/category/category.component';
-import { LoginComponent } from './components/login/login.component';
-import { ProductAddComponent } from './components/product-add/product-add.component';
-import { ProductComponent } from './components/product/product.component';
-import { LoginGuard } from './guards/login.guard';
+import { AppointmentComponent } from './components/appointment/appointment.component';
+import { DoctorComponent } from './components/doctor/doctor.component';
+import { HomeComponent } from './components/home/home.component';
+import { PatientComponent } from './components/patient/patient.component';
+
+
 
 const routes: Routes = [
-  {path:"",pathMatch:"full", component:ProductComponent},
-  {path:"products", component:ProductComponent},
-  {path:"products/category/:categoryId", component:ProductComponent},
-  {path:"products/add", component:ProductAddComponent, canActivate:[LoginGuard]},
-  {path:"login", component:LoginComponent}
+  {path:"",pathMatch:"full",component:HomeComponent},
+  {path:"doctors",component:DoctorComponent},
+  {path:"patients",component:PatientComponent},
+  {path:"appointments",component:AppointmentComponent},
+  
 ];
 
 @NgModule({

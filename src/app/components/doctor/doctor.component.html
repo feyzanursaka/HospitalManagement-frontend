@@ -1,0 +1,191 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Doctor 
+      <button type="button" data-func="dt-add" style="margin-left: 910px;" class="btn btn-outline-success btn-xs dt-add formButton" data-bs-toggle="modal" data-bs-target="#addDoctorModal">Add Doctor</button> 
+    </span>
+  </div>
+</nav>
+
+<div class="card">
+  <div class="card-body">
+
+    <div class="mb-3">
+      <label for="filterTextDoctor" class="form-label"></label>
+      <input type="text" [(ngModel)]="filterTextDoctor" class="form-control" id="filterTextDoctor" placeholder="Search" />
+    </div>
+
+    <div *ngIf="filterTextDoctor" class="alert alert-success">
+      {{filterTextDoctor}} aradınız.
+    </div>
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+      
+          <th>Insurance</th>
+          <th>Adress</th>
+          <th>Phone Number</th>
+
+       
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doctor of doctors | doctorFilterPipe:filterTextDoctor">
+          <td>{{ doctor.firstName }}</td>
+          <td>{{ doctor.lastName }}</td>
+          <td>{{ doctor.insurance }}</td>
+          <td>{{ doctor.adress }}</td>
+          <td>{{ doctor.phoneNumber }}</td>
+
+          <td>
+
+            <button type="button" class="btn btn-outline-warning btn-xs formButton" style="margin-right: 1px" data-func="dt-add" class="btn btn-outline-success btn-xs dt-add formButton" data-bs-toggle="modal" (click)="setSelectedDoctorToUpdate(doctor)" data-bs-target="#updateDoctorModal">
+              <i class="fas fa-pen"></i>
+            </button>
+
+            <button type="button" class="btn btn-outline-danger btn-xs formButton" data-func="dt-add" class="btn btn-outline-danger btn-xs dt-delete formButton" data-bs-toggle="modal" (click)="setSelectedDoctorToDelete(doctor)" data-bs-target="#deleteDoctorModal">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!---->
+
+<div class="modal fade" id="addDoctorModal" tabindex="-1" aria-labelledby="addDoctorModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="AddDoctorTitle">Hasta Ekle</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="addDoctorForm">
+
+          <div class="mb-4">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName">
+          </div>
+
+          <div class="mb-4">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" formControlName="lastName">
+          </div>
+
+          <div class="mb-4">
+            <label for="insurance">Insurance</label>
+            <input type="text" class="form-control" id="insurance" formControlName="insurance">
+          </div>
+
+          <div class="mb-4">
+            <label for="adress">Address</label>
+            <input type="text" class="form-control" id="adress" formControlName="adress">
+          </div>
+
+          <div class="mb-4">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+          </div>
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        <button class="btn btn-success" (click)="addDoctor()" data-bs-dismiss="modal">Kaydet</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---->
+<div class="modal fade" id="updateDoctorModal" tabindex="-1" aria-labelledby="updateDoctorModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="UpdateDoctorTitle">Update Doctor</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="updateDoctorForm">
+
+          <div class="mb-3">
+            <label for="doctorId">Doctor Id</label>
+            <input type="number" class="form-control" *ngIf="selectedDoctor" id="doctorId" name="doctorId" formControlName="doctorId"
+              value="{{selectedDoctor.doctorId}}" readonly>
+          </div>
+
+          <div class="mb-4">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="updateFirstName" formControlName="firstName" value="{{selectedDoctor?.firstName}}">
+          </div>
+
+          <div class="mb-4">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="updateLastName" formControlName="lastName" value="{{selectedDoctor?.lastName}}">
+          </div>
+
+          <div class="mb-4">
+            <label for="insurance">Insurance</label>
+            <input type="text" class="form-control" id="updateInsurance" formControlName="insurance" value="{{selectedDoctor?.insurance}}">
+          </div>
+
+          <div class="mb-4">
+            <label for="adress">Address</label>
+            <input type="text" class="form-control" id="updateAdress" formControlName="adress" value="{{selectedDoctor?.adress}}">
+          </div>
+
+          <div class="mb-4">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" id="updatePhoneNumber" formControlName="phoneNumber" value="{{selectedDoctor?.phoneNumber}}"> 
+          </div>
+
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-success" (click)="updateDoctor()" data-bs-dismiss="modal">Update</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!---->
+<div class="modal fade" id="deleteDoctorModal" tabindex="-1" aria-labelledby="deleteDoctorModal" aria-hidden="true">
+  
+
+  
+  <div class="example-button-container">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2 class="modal-title" id="DeleteDoctorTitle">Delete Doctor</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+          <h3>Silme işlemini onaylıyor musunuz?</h3>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-success" (click)="deleteDoctor()" data-bs-dismiss="modal">Delete</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+  
+  

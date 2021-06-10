@@ -6,31 +6,31 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './components/product/product.component';
-import { CategoryComponent } from './components/category/category.component';
-import { NaviComponent } from './components/navi/navi.component';
-import { TodoComponent } from './components/todo/todo.component';
-import { VatAddedPipe } from './pipes/vat-added.pipe';
-import { FilterPipe } from './pipes/filter.pipe';
+
 
 import {ToastrModule} from "ngx-toastr";
-import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
-import { ProductAddComponent } from './components/product-add/product-add.component';
-import { LoginComponent } from './components/login/login.component';
-import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { HomeComponent } from './components/home/home.component';
+import { NaviComponent } from './components/navi/navi.component';
+import { DoctorComponent } from './components/doctor/doctor.component';
+import { PatientComponent } from './components/patient/patient.component';
+import { AppointmentComponent } from './components/appointment/appointment.component';
+import { PatientFilterPipePipe } from './pipes/patient-filter-pipe.pipe';
+import { DoctorFilterPipePipe } from './pipes/doctor-filter-pipe.pipe';
+import { AppointmentFilterPipePipe } from './pipes/appointment-filter-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
-    CategoryComponent,
     NaviComponent,
-    TodoComponent,
-    VatAddedPipe,
-    FilterPipe,
-    CartSummaryComponent,
-    ProductAddComponent,
-    LoginComponent
+    HomeComponent,
+    DoctorComponent,
+    PatientComponent,
+    NaviComponent,
+    AppointmentComponent,
+    HomeComponent,
+    PatientFilterPipePipe,
+    DoctorFilterPipePipe,
+    AppointmentFilterPipePipe
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     })
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+    
   ],
   bootstrap: [AppComponent]
 })
